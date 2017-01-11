@@ -20,13 +20,34 @@ android {
         }
     }
 }
+//    解决65536
+afterEvaluate {
+    tasks.matching {
+        it.name.startsWith('dex')
+    }.each { dx ->
+        if (dx.additionalParameters == null) {
+            dx.additionalParameters = []
+        }
+        dx.additionalParameters += '--multi-dex' // enable multidex
 
+        // optional
+        // dx.additionalParameters += "--main-dex-list=$projectDir/<filename>".toString() // enable the main-dex-list
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //v7包
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+    //recycleview包
     compile 'com.android.support:recyclerview-v7:25.1.0'
+    //xutils包
+    compile 'org.xutils:xutils:3.3.36'
+    //    解决65536
+    compile 'com.android.support:multidex:1.0.0'
+    //    GSON解析
+    compile 'com.google.code.gson:gson:2.7'
 }

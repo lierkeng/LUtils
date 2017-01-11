@@ -1,4 +1,4 @@
-package com.li.pc.lutils.common.adapter;
+package com.li.pc.lutils.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

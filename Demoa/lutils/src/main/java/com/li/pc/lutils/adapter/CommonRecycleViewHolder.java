@@ -1,4 +1,4 @@
-package com.li.pc.lutils.common.adapter;
+package com.li.pc.lutils.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

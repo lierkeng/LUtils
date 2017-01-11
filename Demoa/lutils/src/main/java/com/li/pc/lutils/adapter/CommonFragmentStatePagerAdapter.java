@@ -1,4 +1,4 @@
-package com.li.pc.lutils.common.adapter;
+package com.li.pc.lutils.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
