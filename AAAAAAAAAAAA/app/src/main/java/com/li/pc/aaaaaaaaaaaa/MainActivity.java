@@ -3,7 +3,8 @@ package com.li.pc.aaaaaaaaaaaa;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.li.pc.lutils.CommonBaseViewHolder;
+import com.li.pc.lutils.adapter.CommonBaseViewHolder;
+
 
 public class MainActivity extends AppCompatActivity {
     CommonBaseViewHolder viewHolder;
@@ -11,6 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 }
