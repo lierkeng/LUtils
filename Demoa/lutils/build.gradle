@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
-
+//启用Jitpack 插件
+apply plugin: 'com.github.dcendents.android-maven'
+//设置Jitpack发布的Group
+//我的github账号是helen-x, 对应我的group就是com.github.helen-x
+group='com.github.lierkeng'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -20,22 +24,7 @@ android {
         }
     }
 }
-// 指定编码
-tasks.withType(JavaCompile) {
-    options.encoding = "UTF-8"
-}
-task javadoc(type: Javadoc) {
-    failOnError  false
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.compile
-}
 
-// 制作文档(Javadoc)
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
 //    解决65536
 afterEvaluate {
     tasks.matching {
